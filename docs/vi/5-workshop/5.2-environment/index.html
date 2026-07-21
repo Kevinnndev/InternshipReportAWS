@@ -15,21 +15,21 @@
     <title>Development Environment Setup :: Báo cáo thực tập</title>
 
     
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/nucleus.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/fontawesome-all.min.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/hybrid.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/featherlight.min.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/perfect-scrollbar.min.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/auto-complete.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/atom-one-dark-reasonable.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/theme.css?1784661330" rel="stylesheet">
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/hugo-theme.css?1784661330" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/nucleus.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/fontawesome-all.min.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/hybrid.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/featherlight.min.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/perfect-scrollbar.min.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/auto-complete.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/atom-one-dark-reasonable.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/theme.css?1784663427" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/hugo-theme.css?1784663427" rel="stylesheet">
     
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/theme-workshop.css?1784661330" rel="stylesheet">
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/css/theme-workshop.css?1784663427" rel="stylesheet">
     
     
 
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/jquery-3.3.1.min.js?1784661330"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/jquery-3.3.1.min.js?1784663427"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -59,14 +59,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="https://kevinnndev.github.io/InternshipReportAWS/js/lunr.min.js?1784661330"></script>
-<script type="text/javascript" src="https://kevinnndev.github.io/InternshipReportAWS/js/auto-complete.js?1784661330"></script>
+<script type="text/javascript" src="https://kevinnndev.github.io/InternshipReportAWS/js/lunr.min.js?1784663427"></script>
+<script type="text/javascript" src="https://kevinnndev.github.io/InternshipReportAWS/js/auto-complete.js?1784663427"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/kevinnndev.github.io\/InternshipReportAWS\/\/vi";
     
 </script>
-<script type="text/javascript" src="https://kevinnndev.github.io/InternshipReportAWS/js/search.js?1784661330"></script>
+<script type="text/javascript" src="https://kevinnndev.github.io/InternshipReportAWS/js/search.js?1784663427"></script>
  
   </div>
 
@@ -778,12 +778,6 @@
     <li><a href="#bối-cảnh-kiến-trúc">Bối cảnh kiến trúc</a>
       <ul>
         <li><a href="#sơ-đồ-kiến-trúc-docker">Sơ đồ Kiến trúc Docker</a></li>
-        <li><a href="#chi-tiết-kiến-trúc-local-development">Chi tiết Kiến trúc Local Development</a></li>
-      </ul>
-    </li>
-    <li><a href="#ports--endpoints">Ports &amp; Endpoints</a>
-      <ul>
-        <li><a href="#sơ-đồ-ports--endpoints">Sơ đồ Ports &amp; Endpoints</a></li>
         <li><a href="#sơ-đồ-ports--services-summary">Sơ đồ Ports &amp; Services Summary</a></li>
         <li><a href="#bảng-ports">Bảng Ports</a></li>
       </ul>
@@ -893,72 +887,6 @@
 <p>Trước khi thiết lập, hiểu cách các components tương tác trong môi trường local development:</p>
 <h3 id="sơ-đồ-kiến-trúc-docker">Sơ đồ Kiến trúc Docker</h3>
 <p><img alt="Kiến trúc Docker" src="https://kevinnndev.github.io/InternshipReportAWS/images/5-Workshop/5.2-Environment/Docker_Architecture_V2.png"></p>
-<h3 id="chi-tiết-kiến-trúc-local-development">Chi tiết Kiến trúc Local Development</h3>
-
-<div class="mermaid" align="center">
-graph TB
-    subgraph Development["🐳 Docker Container"]
-        subgraph Data["Data Layer"]
-            Redis["🟢 Redis<br/>:6379"]
-            MySQL["🔵 MySQL<br/>:3306"]
-        end
-    end
-
-    subgraph Backend["⚙️ Backend (ocr-api)"]
-        API["🐍 FastAPI<br/>:8000"]
-        Celery["⚡ Celery<br/>Worker"]
-        WS["🔌 WebSocket<br/>:8000"]
-    end
-
-    subgraph Frontend["🎨 Frontend (myapporc)"]
-        React["⚛️ React<br/>:5173"]
-    end
-
-    React -->|"HTTP/WS| :5173 → :8000"| API
-    API -->|"Publish Tasks"| Redis
-    Celery -->|"Subscribe| :6379"| Redis
-    API -->|"SQL Queries| :3306"| MySQL
-    Celery -->|"Results"| Redis
-    API -->|"Pub/Sub"| WS
-    React -->|"Real-time| WS"| WS
-</div>
-
-<hr>
-<h2 id="ports--endpoints">Ports &amp; Endpoints</h2>
-<h3 id="sơ-đồ-ports--endpoints">Sơ đồ Ports &amp; Endpoints</h3>
-
-<div class="mermaid" align="center">
-graph LR
-    subgraph Clients["Client Layer"]
-        Browser["🌐 Browser<br/>localhost:5173"]
-    end
-
-    subgraph Services["Services"]
-        Frontend["🎨 Vite Dev Server<br/>:5173"]
-        API["🐍 FastAPI<br/>:8000"]
-        Swagger["📚 Swagger UI<br/>:8000/docs"]
-        WS["🔌 WebSocket<br/>:8000/ws"]
-    end
-
-    subgraph Containers["Docker Containers"]
-        RedisCLI["🟢 Redis<br/>:6379"]
-        MySQLCLI["🔵 MySQL<br/>:3306"]
-    end
-
-    Browser -->|"GET /api/v1/*| POST /upload| WS /ws"| API
-    Browser -->|"Hot Reload| HMR"| Frontend
-    API -->|"Redis Pub/Sub| :6379"| RedisCLI
-    API -->|"SQL| :3306"| MySQLCLI
-    CeleryW["⚡ Celery Worker<br/>(Host)"] -.->|"Tasks| :6379"| RedisCLI
-
-    style Browser fill:#f9f,stroke:#333,stroke-width:2px
-    style Frontend fill:#61dafb,stroke:#333,stroke-width:2px
-    style API fill:#009688,stroke:#333,stroke-width:2px,color:#fff
-    style Swagger fill:#85ea4d,stroke:#333,stroke-width:2px
-    style RedisCLI fill:#dc382d,stroke:#333,stroke-width:2px,color:#fff
-    style MySQLCLI fill:#00758f,stroke:#333,stroke-width:2px,color:#fff
-</div>
-
 <h3 id="sơ-đồ-ports--services-summary">Sơ đồ Ports &amp; Services Summary</h3>
 <p><img alt="Ports &amp; Services Summary" src="https://kevinnndev.github.io/InternshipReportAWS/images/5-Workshop/5.2-Environment/Ports_Services_Summary.png"></p>
 <h3 id="bảng-ports">Bảng Ports</h3>
@@ -1804,19 +1732,19 @@ graph LR
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/clipboard.min.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/perfect-scrollbar.min.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/perfect-scrollbar.jquery.min.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/jquery.sticky.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/featherlight.min.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/highlight.pack.js?1784661330"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/clipboard.min.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/perfect-scrollbar.min.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/perfect-scrollbar.jquery.min.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/jquery.sticky.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/featherlight.min.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/highlight.pack.js?1784663427"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/modernizr.custom-3.6.0.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/learn.js?1784661330"></script>
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/hugo-learn.js?1784661330"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/modernizr.custom-3.6.0.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/learn.js?1784663427"></script>
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/js/hugo-learn.js?1784663427"></script>
 
-    <link href="https://kevinnndev.github.io/InternshipReportAWS/mermaid/mermaid.css?1784661330" rel="stylesheet" />
-    <script src="https://kevinnndev.github.io/InternshipReportAWS/mermaid/mermaid.js?1784661330"></script>
+    <link href="https://kevinnndev.github.io/InternshipReportAWS/mermaid/mermaid.css?1784663427" rel="stylesheet" />
+    <script src="https://kevinnndev.github.io/InternshipReportAWS/mermaid/mermaid.js?1784663427"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
